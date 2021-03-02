@@ -22,9 +22,9 @@ if st.button('Enter'):
         for file in check_dir_list:
             file_item = source_dir / file
             if file_item.is_file():
-                curr_dir_info['file'] += file
+                curr_dir_info['file'].append(file)
             elif file_item.is_dir():
-                curr_dir_info['dir'] += file
+                curr_dir_info['dir'].append(file)
         st.write(curr_dir_info)
     else:
         st.text('Please verify the dir:{}'.format(input_dir))
