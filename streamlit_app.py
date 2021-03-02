@@ -30,8 +30,16 @@ if st.button('Enter'):
         st.text('Please verify the dir:{}'.format(input_dir))
 else:
     pass
-        
-
+     
+new_dir = st.text_input('New Dir:', 'New')    
+if st.button('Make Dir'):
+    source_dir = Path(input_dir)/new_dir
+    source.mkdir(parents=True, exist_ok=True)
+    st.text('Create new dir:{} under {}'.format(new_dir, input_dir))
+else:
+    pass
+    
+    
 # """
 # # Welcome to Streamlit!
 
