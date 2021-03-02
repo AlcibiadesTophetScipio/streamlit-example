@@ -18,7 +18,7 @@ if st.button('Enter'):
     if source_dir.is_dir():
         check_dir_list = os.listdir(source_dir)
         
-        curr_dir_info = {'dir':[], 'file':[]}
+        curr_dir_info = {'dir':["./"], 'file':["None"]}
         for file in check_dir_list:
             file_item = source_dir / file
             if file_item.is_file():
