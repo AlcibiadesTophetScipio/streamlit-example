@@ -18,13 +18,13 @@ if st.button('Enter'):
     if source_dir.is_dir():
         check_dir_list = os.listdir(source_dir)
         
-        curr_dir_info = {'dir':["./"], 'file':["None"]}
+        curr_dir_info = {'dir':[], 'file':[]}
         for file in check_dir_list:
             file_item = source_dir / file
             if file_item.is_file():
-                curr_dir_info['file'] += str(file_item)
+                curr_dir_info['file'] += file
             elif file_item.is_dir():
-                curr_dir_info['dir'] += str(file_item)
+                curr_dir_info['dir'] += file
         st.write(curr_dir_info)
     else:
         st.text('Please verify the dir:{}'.format(input_dir))
